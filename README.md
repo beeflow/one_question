@@ -33,16 +33,45 @@ Next you need to fetch currencies rates:
 php bin/console currencies:fetch
 ```
 
+## Authorization
+
+First you need to add new user. To create password you can use command
+```bash
+php bin/console security:encode-password
+```
+
 ## API Endpoints
 
+### Login
+```bash
+POST /api/login_check
+```
+
+Payload
+```
+_username=USER&_password=PASSWORD
+```
+
+Headers:
+```
+Content-Type: application/x-www-form-urlencoded
+```
 ### All countries with currencies and rates
 
 ```bash
 GET /api/v1/
+```
+Headers
+```
+Authorization: Bearer [TOKEN]
 ```
 
 ### Find country
 
 ```bash
 GET /api/v1//Poland
+```
+Headers
+```
+Authorization: Bearer [TOKEN]
 ```

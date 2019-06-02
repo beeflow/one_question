@@ -10,6 +10,7 @@ namespace App\Factories;
 use App\Entity\Country;
 use App\Entity\Currency;
 use App\Entity\CurrencyRating;
+use App\Entity\MyUser;
 use App\TransportObject\TransportObjects\Currency as CurrencyTransportObject;
 use App\TransportObject\TransportObjects\Country as CountryTransportObject;
 use App\TransportObject\TransportObjects\CurrencyRate as CurrencyRateTransportObject;
@@ -56,5 +57,13 @@ class EntityFactory
         }
 
         return CurrencyRating::createFrom($currencyRate);
+    }
+
+    /**
+     * @return MyUser
+     */
+    public function createUser(): MyUser
+    {
+        return new MyUser();
     }
 }
