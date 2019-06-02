@@ -1,0 +1,7 @@
+index:
+    path: /
+    controller: App\Controller\DefaultController::index
+
+find:
+    path: /{countryName}
+    controller: App\Controller\DefaultController::find
