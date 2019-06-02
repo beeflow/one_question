@@ -1,7 +1,7 @@
 index:
-    path: /
+    path: /api/
     controller: App\Controller\DefaultController::index
 
 find:
-    path: /{countryName}
+    path: /api/{countryName}
     controller: App\Controller\DefaultController::find

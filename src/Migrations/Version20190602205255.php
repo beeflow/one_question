@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20190602193925 extends AbstractMigration
+final class Version20190602205255 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -25,6 +25,7 @@ final class Version20190602193925 extends AbstractMigration
         $this->addSql('CREATE SEQUENCE currency_rating_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
         $this->addSql('CREATE SEQUENCE country_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
         $this->addSql('CREATE SEQUENCE currency_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
+        $this->addSql('CREATE SEQUENCE my_user_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
         $this->addSql('CREATE TABLE currency_rating (id INT NOT NULL, currency_id INT NOT NULL, rating_date DATE NOT NULL, rate DOUBLE PRECISION NOT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE INDEX IDX_7C0F004D38248176 ON currency_rating (currency_id)');
         $this->addSql('CREATE UNIQUE INDEX unique_currency_rate ON currency_rating (rating_date, currency_id)');
@@ -36,6 +37,8 @@ final class Version20190602193925 extends AbstractMigration
         $this->addSql('CREATE INDEX IDX_5A9CD98238248176 ON country_currency (currency_id)');
         $this->addSql('CREATE TABLE currency (id INT NOT NULL, currency_name VARCHAR(150) NOT NULL, currency_code VARCHAR(3) NOT NULL, currency_symbol VARCHAR(10) DEFAULT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE UNIQUE INDEX UNIQ_6956883FD4943D72 ON currency (currency_name)');
+        $this->addSql('CREATE TABLE my_user (id INT NOT NULL, username VARCHAR(180) NOT NULL, roles JSON NOT NULL, password VARCHAR(255) NOT NULL, PRIMARY KEY(id))');
+        $this->addSql('CREATE UNIQUE INDEX UNIQ_4DB4FF1DF85E0677 ON my_user (username)');
         $this->addSql('ALTER TABLE currency_rating ADD CONSTRAINT FK_7C0F004D38248176 FOREIGN KEY (currency_id) REFERENCES currency (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE country_currency ADD CONSTRAINT FK_5A9CD982F92F3E70 FOREIGN KEY (country_id) REFERENCES country (id) ON DELETE CASCADE NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE country_currency ADD CONSTRAINT FK_5A9CD98238248176 FOREIGN KEY (currency_id) REFERENCES currency (id) ON DELETE CASCADE NOT DEFERRABLE INITIALLY IMMEDIATE');
@@ -53,9 +56,11 @@ final class Version20190602193925 extends AbstractMigration
         $this->addSql('DROP SEQUENCE currency_rating_id_seq CASCADE');
         $this->addSql('DROP SEQUENCE country_id_seq CASCADE');
         $this->addSql('DROP SEQUENCE currency_id_seq CASCADE');
+        $this->addSql('DROP SEQUENCE my_user_id_seq CASCADE');
         $this->addSql('DROP TABLE currency_rating');
         $this->addSql('DROP TABLE country');
         $this->addSql('DROP TABLE country_currency');
         $this->addSql('DROP TABLE currency');
+        $this->addSql('DROP TABLE my_user');
     }
 }

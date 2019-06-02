@@ -110,3 +110,6 @@ modules.xml
 ###< symfony/phpunit-bridge ###
 
 coverage-html
+###> lexik/jwt-authentication-bundle ###
+/config/jwt/*.pem
+###< lexik/jwt-authentication-bundle ###
