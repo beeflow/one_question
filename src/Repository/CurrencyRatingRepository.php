@@ -4,7 +4,6 @@ namespace App\Repository;
 
 use App\Entity\CurrencyRating;
 use App\Factories\TransportObjectFactory;
-use App\TransportObject\TransportObjects\CurrencyResponse;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
