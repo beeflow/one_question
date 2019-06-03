@@ -3,6 +3,8 @@
 Before you start, please create copy `.env.example` file to `.env` and 
 change `DATABASE_URL`
 
+**Service will work only with PostgreSQL database**
+
 Then on your console, in project directory, run
 
 ```bash
