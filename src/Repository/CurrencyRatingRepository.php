@@ -36,7 +36,7 @@ class CurrencyRatingRepository extends ServiceEntityRepository
     /**
      * @param TransportObjectFactory $transportObjectFactory
      *
-     * @return CurrencyResponse[]
+     * @return array
      * @throws \Doctrine\DBAL\DBALException
      */
     public function findByMaxDate(TransportObjectFactory $transportObjectFactory): array
