@@ -35,9 +35,9 @@ php bin/console currencies:fetch
 
 ## Authorization
 
-First you need to add new user. To create password you can use command
+First you need to add new user.
 ```bash
-php bin/console security:encode-password
+php bin/console bin/console fos:user:create
 ```
 
 ## API Endpoints
