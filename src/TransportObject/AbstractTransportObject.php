@@ -7,7 +7,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 abstract class AbstractTransportObject implements TransportObjectInterface
 {
-    protected const REQUIRED_FIELD = 'api.error.field.required';
+    protected const REQUIRED_FIELD = 'api.error.required_field';
 
     /**
      * @var array

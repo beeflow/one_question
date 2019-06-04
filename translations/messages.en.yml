@@ -2,5 +2,6 @@
 transport_object:
   errors:
     element_cannot_be_empty: "%s cannot be empty"
+    required_field: "Field %s is required"
     string_element_is_too_long: "%s must be maximum %d letters length"
     invalid_params: Invalid parameters
